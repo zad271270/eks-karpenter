@@ -68,3 +68,8 @@ kubectl get deployment metrics-server -n kube-system
 kubectl get pods -n kube-system -l k8s-app=metrics-server
 ```
 
+##### Load Testing
+```console
+
+```
+
