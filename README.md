@@ -16,6 +16,7 @@
 
 ##### Key Pair
 
+```console
 if [ -d /root/.ssh ]
 then
 echo "/root/.ssh exists"
@@ -34,17 +35,17 @@ echo "All is well, now I am creating fresh PEM"
 export SSH_KEY_NAME="terraform-cloudgeeks"
 aws ec2 create-key-pair --key-name "${SSH_KEY_NAME}" --query 'KeyMaterial' --output text > ~/.ssh/${SSH_KEY_NAME}.pem
 fi
-
+```
 
 ##### KubeConfig
-
+```console
 if [ -d /root/.kube ]
 then
 echo "/root.kube directory exists"
 else
 mkdir /root/.kube && touch /root/.kube/config
 fi
-
+```
 
 ##### Source
 
