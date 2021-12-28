@@ -69,7 +69,49 @@ kubectl get pods -n kube-system -l k8s-app=metrics-server
 ```
 
 ##### Load Testing
-```console
 
+1. To create a php-apache deployment, run the following command:
+```console
+kubectl create deployment php-apache --image=k8s.gcr.io/hpa-example
 ```
 
+2.    To set the CPU requests, run the following command:
+```console
+kubectl patch deployment php-apache -p='{"spec":{"template":{"spec":{"containers":[{"name":"hpa-example","resources":{"requests":{"cpu":"200m"}}}]}}}}'
+```
+
+3.    To expose the deployment as a service, run the following command:
+```console
+kubectl create service clusterip php-apache --tcp=80
+```
+
+4.    To create an HPA, run the following command:
+```console
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+```
+
+5.    To confirm that the HPA was created, run the following command:
+```console
+kubectl get hpa
+```
+
+6.    To create a pod to connect to the deployment that you created earlier, run the following command:
+```console
+kubectl run --generator=run-pod/v1 -i --tty load-generator --image=busybox /bin/sh
+```
+
+7.    To test a load on the pod in the namespace that you used in step 1, run the following script:
+```console
+while true; do wget -q -O- http://php-apache; done
+```
+
+8.    To see how the HPA scales the pod based on CPU utilization metrics, run the following command (preferably from another terminal window)
+```console
+kubectl get hpa -w
+```
+
+9. To clean up the resources used for testing the HPA, run the following commands:
+```console
+kubectl delete hpa,service,deployment php-apache
+kubectl delete pod load-generator
+```
