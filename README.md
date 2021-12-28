@@ -55,3 +55,8 @@ fi
 source EKS.env
 
 ```
+
+##### Metrics Server Installation
+```console
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
