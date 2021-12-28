@@ -98,11 +98,13 @@ kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
 5.    To confirm that the HPA was created, run the following command:
 ```console
 kubectl get hpa
+
+ kubectl describe hpa
 ```
 
 6.    To create a pod to connect to the deployment that you created earlier, run the following command:
 ```console
-kubectl run --generator=run-pod/v1 -i --tty load-generator --image=busybox /bin/sh
+kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
 ```
 
 7.    To test a load on the pod in the namespace that you used in step 1, run the following script:
