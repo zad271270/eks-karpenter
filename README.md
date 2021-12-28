@@ -56,6 +56,11 @@ source EKS.env
 
 ```
 
+##### Karpenter Logs
+```console
+kubectl logs -f -n karpenter $(kubectl get pods -n karpenter -l karpenter=controller -o name)
+```
+
 ##### Metrics Server Installation
 ```console
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
