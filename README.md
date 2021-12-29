@@ -109,7 +109,7 @@ kubectl run -i --tty load-generator --rm --image=busybox --restart=Never -- /bin
 
 7.    To test a load on the pod in the namespace that you used in step 1, run the following script:
 ```console
-while true; do wget -q -O- http://php-apache; done
+while sleep 0.01; do wget -q -O- http://php-apache; done
 ```
 
 8.    To see how the HPA scales the pod based on CPU utilization metrics, run the following command (preferably from another terminal window)
@@ -122,3 +122,15 @@ kubectl get hpa -w
 kubectl delete hpa,service,deployment php-apache
 kubectl delete pod load-generator
 ```
+
+##### kubectl top
+```console
+kubectl top --help
+
+kubectl top node
+
+kubectl top pod
+
+kubectl top pod --containers
+```
+
