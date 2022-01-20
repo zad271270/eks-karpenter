@@ -88,9 +88,8 @@ module "eks" {
   node_groups = {
     cloudgeeks-eks-workers = {
       create_launch_template = true
-      name                   = "cloudgeeks-launch-template-workers"  # Name of the launch-template
+      name                   = "cloudgeeks-eks-workers"  # Eks Workers Node Groups Name
       instance_types         = ["t3a.medium"]
-      node_group_name        = "cloudgeeks-eks-workers"  # Eks Workers Node Groups Name
       capacity_type          = "ON_DEMAND"
       desired_capacity       = 1
       max_capacity           = 1
