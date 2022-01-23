@@ -84,7 +84,7 @@ module "eks" {
   enable_irsa               = true                 # oidc
   cluster_enabled_log_types = ["api", "audit", "authenticator", "controllerManager", "scheduler"]
 
-
+# https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/17.21.0/submodules/node_groups
   node_groups = {
     cloudgeeks-eks-workers = {
       create_launch_template = true
@@ -97,7 +97,7 @@ module "eks" {
       disk_type              = "gp2"
       disk_size              = 20
       ebs_optimized          = true
-      encrypted              = true
+      disk_encrypted         = true
       key_name               = "terraform-cloudgeeks"
       enable_monitoring      = true
 
