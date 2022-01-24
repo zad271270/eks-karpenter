@@ -123,7 +123,7 @@ kubectl delete hpa,service,deployment php-apache
 kubectl delete pod load-generator
 ```
 
-##### kubectl top
+-- kubectl top
 ```console
 kubectl top --help
 
