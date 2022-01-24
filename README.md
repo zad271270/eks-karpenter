@@ -129,8 +129,8 @@ kubectl top --help
 
 kubectl top node
 
-kubectl top pod
+kubectl top pod -A
 
-kubectl top pod --containers
+kubectl top pod --containers -A
 ```
 
