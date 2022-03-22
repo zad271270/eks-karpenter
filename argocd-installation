@@ -13,6 +13,8 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 
 # Port Forward
 
+kubectl get all -n argocd
+
 kubectl port-forward svc/argocd-server --address 0.0.0.0  8080:443 -n argocd
 
 # User Name & Password
