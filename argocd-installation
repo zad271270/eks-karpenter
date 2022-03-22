@@ -2,16 +2,23 @@
 
 # https://argo-cd.readthedocs.io/en/stable/getting_started/#1-install-argo-cd
 
+######################
 # Create a Seperate NS
+######################
 
 kubectl create ns argocd
 
-# kubectl get ns
+kubectl get ns
+
+##########################
+# Helm ArgoCD Installation
+##########################
 
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
-
+###############
 # Port Forward
+###############
 
 kubectl get all -n argocd
 
