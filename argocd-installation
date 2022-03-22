@@ -6,12 +6,7 @@
 
 kubectl create ns argocd
 
-
 # kubectl get ns
-
-kubectl apply -f install-argo-cd.yaml
-
-# or
 
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
