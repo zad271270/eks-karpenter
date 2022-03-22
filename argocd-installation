@@ -30,7 +30,13 @@ kubectl port-forward svc/argocd-server --address 0.0.0.0  8080:443 -n argocd
 
 # password is saved in kuernetes cluster secret #--> kubectl get secrets -n argocd (argocd-initial-admin-secret)
 
-#  kubectl get secret argocd-initial-admin-secret -o yaml -n argocd
+#########
+# Secrets
+#########
+
+kubectl get secrets -n argocd
+
+kubectl get secret argocd-initial-admin-secret -o yaml -n argocd
 
 #  echo Z1ViNDIzMkpRR0FFZDdoNg== | base64 --decode
 
