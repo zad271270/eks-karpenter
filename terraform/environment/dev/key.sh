@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if [ -d /root/.kube ]
+then
+echo "/root/.kube exists"
+else
+mkdir -p /root/.kube
+touch /root/.kube/config
+fi
+
 if [ -d /root/.ssh ]
 then
 echo "/root/.ssh exists"
