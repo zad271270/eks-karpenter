@@ -3,6 +3,8 @@
 if [ -d /root/.kube ]
 then
 echo "/root/.kube exists"
+> /root/.kube/config
+
 else
 mkdir -p /root/.kube
 touch /root/.kube/config
