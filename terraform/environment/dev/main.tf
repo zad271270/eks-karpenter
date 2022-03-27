@@ -114,7 +114,8 @@ module "eks" {
       enable_monitoring      = true
 
       additional_tags = {
-        Name = "eks-worker"                            # Tags for Cluster Worker Nodes
+        "Name"                     = "eks-worker"                            # Tags for Cluster Worker Nodes
+        "karpenter.sh/discovery" = var.cluster_name
       }
 
     }
