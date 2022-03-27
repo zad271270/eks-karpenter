@@ -19,6 +19,7 @@ spec:
   limits:
     resources:
       cpu: 1000
+      memory: 1000Gi
   provider:
     instanceProfile: KarpenterNodeInstanceProfile-cloudgeeks-eks-dev
   ttlSecondsAfterEmpty: 30
