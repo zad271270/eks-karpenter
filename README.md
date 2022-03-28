@@ -60,6 +60,15 @@ source EKS.env
 ```console
 kubectl logs -f -n karpenter $(kubectl get pods -n karpenter -l karpenter=controller -o name)
 ```
+- Create Deployment
+kubectl create deployment <Deplyment-Name> --image=<Container-Image>
+kubectl create deployment first-deployment --image=quickbooks2018/blue:latest
+ 
+ - Scale Deployment
+ # Scale Up the Deployment
+kubectl scale --replicas=20 deployment/<Deployment-Name>
+kubectl scale --replicas=20 deployment/first-deployment 
+ 
 
 ##### Metrics Server Installation
 ```console
