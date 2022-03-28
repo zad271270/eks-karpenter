@@ -115,7 +115,7 @@ module "eks" {
 
       additional_tags = {
         "Name"                     = "eks-worker"                            # Tags for Cluster Worker Nodes
-        "karpenter.sh/discovery" = var.cluster_name
+        "karpenter.sh/discovery"   = var.cluster_name
       }
 
     }
@@ -161,8 +161,9 @@ module "karpernter_installation" {
   source = "../../modules/eks-karpenter-installation"
   cluster_endpoint                          = module.eks.cluster_endpoint
   cluster_name                              = var.cluster_name
+  instance_profile                          = module.eks.worker_iam_role_name
   iam_assumable_role_karpenter_iam_role_arn = module.karpenter_controller_iam_role.iam_assumable_role_karpenter_iam_role_arn
   kubeconfig                                = module.eks.kubeconfig
-
-  depends_on                                = [module.eks]
+  depends_on                                = [module.eks.kubeconfig]
+  karpenter_version                         = "v0.5.6"
 }
