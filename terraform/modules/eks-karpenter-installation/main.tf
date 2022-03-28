@@ -22,4 +22,10 @@ resource "helm_release" "karpenter" {
     name  = "controller.clusterEndpoint"
     value = var.cluster_endpoint
   }
+  
+    set {
+    name  = "aws.defaultInstanceProfile"
+    value = var.instance_profile
+  }
+  
 }
