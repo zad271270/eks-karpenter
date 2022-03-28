@@ -7,6 +7,7 @@ resource "helm_release" "karpenter" {
   repository = "https://charts.karpenter.sh"
   chart      = "karpenter"
   version    = var.karpenter_version
+  verify     = true
 
   set {
     name  = "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
