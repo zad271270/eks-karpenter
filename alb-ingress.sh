@@ -10,7 +10,7 @@ AWS_ACCOUNT_ID="602401143452"
 # https://docs.aws.amazon.com/eks/latest/userguide/add-ons-images.html
 
 # Download IAM Policy
-## Download latest & attach this NodeIAM
+## Download latest & attach this to NodeIAM
 curl -o iam_policy_latest.json https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/main/docs/install/iam_policy.json
 
 ## Download specific version
