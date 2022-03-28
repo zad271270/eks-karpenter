@@ -13,3 +13,7 @@ variable "cluster_name" {
 variable "cluster_endpoint" {
   type = string
 }
+
+variable "instance_profile" {
+  type = string
+}
