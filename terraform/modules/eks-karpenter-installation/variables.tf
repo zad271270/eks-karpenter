@@ -17,3 +17,7 @@ variable "cluster_endpoint" {
 variable "instance_profile" {
   type = string
 }
+
+variable "karpenter_version" {
+  type = string
+}
