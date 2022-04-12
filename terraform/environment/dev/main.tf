@@ -36,7 +36,7 @@ terraform {
 # Eks Vpc
 #########
 module "eks_vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
+  source  = "registry.terraform.io/terraform-aws-modules/vpc/aws"
   version = "3.11.0"
 
   name            = var.cluster_name
@@ -81,7 +81,7 @@ module "eks_vpc" {
 # Eks Cluster
 #############
 module "eks" {
-  source  = "terraform-aws-modules/eks/aws"
+  source  = "registry.terraform.io/terraform-aws-modules/eks/aws"
   version = "17.24.0"
 
   cluster_version           = "1.21"
