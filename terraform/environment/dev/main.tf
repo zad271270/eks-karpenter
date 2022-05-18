@@ -104,9 +104,9 @@ module "eks" {
       name                   = "cloudgeeks-eks-workers"  # Eks Workers Node Groups Name
       instance_types         = ["t3a.medium"]
       capacity_type          = "ON_DEMAND"
-      desired_capacity       = 1
-      max_capacity           = 1
-      min_capacity           = 1
+      desired_capacity       = 2
+      max_capacity           = 2
+      min_capacity           = 2
       disk_type              = "gp2"
       disk_size              = 20
       ebs_optimized          = true
