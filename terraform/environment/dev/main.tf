@@ -122,6 +122,12 @@ module "eks" {
     }
   }
 
+      tags = {
+    # Tag node group resources for Karpenter auto-discovery
+    # NOTE - if creating multiple security groups with this module, only tag the
+    # security group that Karpenter should utilize with the following tag
+    "karpenter.sh/discovery" = var.cluster_name
+  }
 
 }
 
