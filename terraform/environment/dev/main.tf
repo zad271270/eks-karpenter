@@ -165,6 +165,10 @@ module "karpenter_controller_iam_role" {
   cluster_oidc_issuer_url = module.eks.cluster_oidc_issuer_url
 }
 
+########################################################
+# Must Install the latest version of aws cli & terraform
+########################################################
+  
 ########################
 # Karpenter installation
 ########################
