@@ -1,3 +1,7 @@
+########################################################
+# Must Install the latest version of aws cli & terraform
+########################################################
+
 terraform {
   required_providers {
     aws = {
@@ -171,6 +175,6 @@ module "karpernter_installation" {
   instance_profile                          = module.eks.worker_iam_role_name
   iam_assumable_role_karpenter_iam_role_arn = module.karpenter_controller_iam_role.iam_assumable_role_karpenter_iam_role_arn
   kubeconfig                                = module.eks.kubeconfig
-  depends_on                                = [module.eks.kubeconfig]
+  cluster_ca_certificate                    = base64decode(module.eks.cluster_certificate_authority_data) 
   karpenter_version                         = "v0.5.3"
 }
