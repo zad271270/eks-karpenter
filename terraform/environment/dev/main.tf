@@ -168,7 +168,7 @@ module "karpenter_controller_iam_role" {
 ########################################################
 # Must Install the latest version of aws cli & terraform
 ########################################################
-  
+# aws eks get-token --cluster-name cloudgeeks-eks-dev | jq '.apiVersion'    # Note: Install the lastest version of terraform & awscli is must  
 ########################
 # Karpenter installation
 ########################
