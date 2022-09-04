@@ -50,3 +50,9 @@ kubectl get secret argocd-initial-admin-secret -o yaml -n argocd
 # https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html
 
 ssh-keygen -t ed25519 -f cloudgeeks -C "default"
+
+##########################
+# ARGOcd CLI Insatallation
+##########################
+curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+chmod +x /usr/local/bin/argocd
