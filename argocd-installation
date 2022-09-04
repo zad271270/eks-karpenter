@@ -54,5 +54,7 @@ ssh-keygen -t ed25519 -f cloudgeeks -C "default"
 ##########################
 # ARGOcd CLI Insatallation
 ##########################
+# https://argo-cd.readthedocs.io/en/stable/cli_installation/
+
 curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
 chmod +x /usr/local/bin/argocd
