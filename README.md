@@ -1,6 +1,8 @@
 # cloudgeeks.ca
 
-### KARPENTER Installation updated repo USE THIS https://github.com/quickbooks2018/aws-eks-blueprints.git
+### KARPENTER Installation updated repo "USE THIS" https://github.com/quickbooks2018/aws-eks-blueprints.git
+
+- https://github.com/quickbooks2018/aws-eks-blueprints.git
 
 ##### https://www.youtube.com/@cloudgeeksca
 
