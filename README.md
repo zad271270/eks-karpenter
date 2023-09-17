@@ -1,6 +1,8 @@
 # cloudgeeks.ca
 
-##### https://www.youtube.com/c/AWSLinuxWindows
+### KARPENTER Installation updated repo USE THIS https://github.com/quickbooks2018/aws-eks-blueprints.git
+
+##### https://www.youtube.com/@cloudgeeksca
 
 ### Backend ###
 ##### S3
